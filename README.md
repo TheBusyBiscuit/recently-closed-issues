@@ -1,8 +1,12 @@
-# GitHub Action: Retrieve issues that were recently closed by a commit
+# GitHub Action: Retrieve issues closed by commits
 This simple Action provides you a way to retrieve issues that were recently closed via a commit.<br>
 The GitHub API currently does not allow us to retrieve that information in any easily accessible way, hence why I made this Action myself.
 
-This can be very useful if you want to assign labels to closed tickets for example.
+This Action adheres to the syntax of [Closing issues via keywords](https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword) provided by GitHub.
+It also works with multiple issues being closed in the same commit.
+
+This can be very useful if you want to assign labels to closed tickets for example.<br>
+[You can find an example workflow right here](#assign-a-label-to-an-issue-if-it-was-closed-by-a-ticket)
 
 ## Inputs
 
@@ -60,7 +64,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         max_commits: 20
       - uses: maxkomarychev/octions/octions/issues/add-labels@master
-        if: contains(toJson(steps.resolved.outputs.issues), github.event.issue.number)
+        if: contains(toJson(steps.my_step_id.outputs.issues), github.event.issue.number)
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue_number: ${{ github.event.issue.number }}
