@@ -40,7 +40,29 @@ jobs:
 ```
 
 ### Assign a label to an issue if it was closed by a ticket
+This example will add a "Resolved" label to any issue that was closed via a commit.<br>
+I am using the GitHub Action [maxkomarychev/octions@master](https://github.com/maxkomarychev/octions) to add the label, any action that can add labels will suffice though, this is just an example.
+
+You can use GitHub's [expressions syntax](https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#contains) to create a simple if-statement that will make a step only trigger if the currently closed issue was closed via a commit.
 
 ```yaml
-// TODO
+on:
+  issue:
+    types:
+      - closed
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: TheBusyBiscuit/recently-closed-issues@master
+        id: my_step_id
+        token: ${{ secrets.GITHUB_TOKEN }}
+        max_commits: 20
+      - uses: maxkomarychev/octions/octions/issues/add-labels@master
+        if: contains(toJson(steps.resolved.outputs.issues), github.event.issue.number)
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue_number: ${{ github.event.issue.number }}
+          labels: 'Resolved'
 ```
