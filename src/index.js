@@ -32,7 +32,11 @@ async function run() {
 			
 			while (match != null) {
 				var number = parseInt(match[1], 10);
-				if (!(issues.includes(number)) issues.push(number);
+				
+				if (!(issues.includes(number))) {
+					issues.push(number);
+				}
+				
 				console.log(`Found closed issue #${number}`);
 				
 				match = regexp.exec(message);
