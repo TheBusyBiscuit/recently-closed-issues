@@ -12,15 +12,19 @@
   },
   "keywords": [
     "github",
-	"action",
-	"issues",
-	"commits",
-	"keywords"
+    "action",
+    "issues",
+    "commits",
+    "keywords"
   ],
   "author": "TheBusyBiscuit",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/TheBusyBiscuit/recently-closed-issues/issues"
   },
-  "homepage": "https://github.com/TheBusyBiscuit/recently-closed-issues#readme"
+  "homepage": "https://github.com/TheBusyBiscuit/recently-closed-issues#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1"
+  }
 }
