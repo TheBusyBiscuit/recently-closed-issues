@@ -18,8 +18,8 @@ async function run() {
 	console.log(`Retrieving the last ${per_page} commits...`);
 	
 	var commits = await octokit.repos.listCommits({
-		repo.owner,
-		repo.repo,
+		owner: repo.owner,
+		repo: repo.repo,
 		per_page: per_page
 	});
 	
