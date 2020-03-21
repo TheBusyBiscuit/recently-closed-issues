@@ -29,7 +29,7 @@ async function run() {
 		let message = commits.data[i].commit.message;
 
 		for (let k in keywords) {
-			let regexp = new RegExp(keywords[k] + ' #([0-9]+)');
+			let regexp = new RegExp(keywords[k] + ' #([0-9]+)', 'gi');
 			let match = regexp.exec(message);
 
 			while (match != null) {

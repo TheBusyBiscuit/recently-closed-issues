@@ -1,6 +1,6 @@
 {
   "name": "recently-closed-issues",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This GitHub Action provides an easy way to retrieve all issues that were recently closed by a commit",
   "main": "src/index.js",
   "scripts": {
