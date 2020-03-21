@@ -46,7 +46,7 @@ async function run() {
 		}
 	}
 
-	core.setOutput("issues", issues);
+	core.setOutput("issues", JSON.stringify(issues));
 }
 
 try {

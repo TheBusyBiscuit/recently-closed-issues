@@ -16,7 +16,7 @@ You can use the built-in ${{ secrets.GITHUB_TOKEN }} variable for this.
 ## Outputs
 
 ### `issues`
-The output of this is an Array of numbers, corresponding to the issue numbers that were closed via commits.
+The output of this is a JSON Array of numbers, corresponding to the issue numbers that were closed via commits.
 
 ## Example usages
 
