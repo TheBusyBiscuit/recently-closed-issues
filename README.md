@@ -3,7 +3,13 @@ This simple Action provides you a way to retrieve issues that were recently clos
 The GitHub API currently does not allow us to retrieve that information in any easily accessible way, hence why I made this Action myself.
 
 This Action adheres to the syntax of [Closing issues via keywords](https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword) provided by GitHub.
-It also works with multiple issues being closed in the same commit.
+It also works with multiple issues being closed in the same commit and it is case-insensitive.<br>
+Examples:
+* Fixed #123
+* Resolves #123
+* In this commit we closed #123
+* Closed #123 I have
+* Closed #123 but also fixed #124
 
 This can be very useful if you want to assign labels to closed tickets for example.<br>
 [You can find an example workflow right here](#assign-a-label-to-an-issue-if-it-was-closed-by-a-ticket)
