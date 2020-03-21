@@ -1,0 +1,23 @@
+name: 'recently-closed-issues'
+description: 'A GitHub Action that allows you to retrieve all issues that were recently closed by a commit'
+
+inputs:
+  token:
+    description: The Access token used to authenticate
+    required: true
+  max_commits:
+    description: The maximum amount of commits to retrieve
+    required: true
+    default: 20
+
+outputs:
+  issues:
+    description: 'An array of numbers representing all recently closed issues'
+
+runs:
+  using: 'node12'
+  main: 'src/index.js'
+  
+branding:
+  icon: git-commit
+  color: blue

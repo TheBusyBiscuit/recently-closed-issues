@@ -1,0 +1,26 @@
+{
+  "name": "recently-closed-issues",
+  "version": "1.0.0",
+  "description": "This GitHub Action provides an easy way to retrieve all issues that were recently closed by a commit",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheBusyBiscuit/recently-closed-issues.git"
+  },
+  "keywords": [
+    "github",
+	"action",
+	"issues",
+	"commits",
+	"keywords"
+  ],
+  "author": "TheBusyBiscuit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheBusyBiscuit/recently-closed-issues/issues"
+  },
+  "homepage": "https://github.com/TheBusyBiscuit/recently-closed-issues#readme"
+}
