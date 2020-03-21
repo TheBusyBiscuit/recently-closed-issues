@@ -25,8 +25,8 @@ async function run() {
 	
 	console.log(commits);
 
-	for (let i in commits) {
-		let message = commits[i].commit.message;
+	for (let i in commits.data) {
+		let message = commits.data[i].commit.message;
 
 		for (let k in keywords) {
 			let regexp = new RegExp(keywords[k] + ' #([0-9]+)');
